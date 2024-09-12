@@ -6,25 +6,25 @@
     >
         <ul class="flex gap-10 px-10">
             <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75"
+                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer"
             >
                 <i class="fa-solid fa-home"></i>
                 <a href="/">Inicio</a>
             </li>
             <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75"
+                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer"
             >
                 <i class="fa-solid fa-briefcase"></i>
                 <a href="/about">Proyectos</a>
             </li>
             <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75"
+                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer"
             >
                 <i class="fa-solid fa-user"></i>
                 <a href="/portfolio">Sobre mí</a>
             </li>
             <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75"
+                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer"
             >
                 <i class="fa-solid fa-envelope"></i>
                 <a href="/contact">Contáctame</a>
@@ -54,5 +54,12 @@
         </section>
     </main>
 
-    <footer></footer>
+    <footer
+        class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400"
+    >
+        <div class="flex flex-col items-center gap-2">
+            <span>Desarrollo hecho por Hugo Fernández</span>
+            <p>&copy; {{ fullYear }} | Todos los derechos reservados</p>
+        </div>
+    </footer>
 </div>

@@ -12,4 +12,9 @@ import { RouterOutlet } from "@angular/router";
 export class AppComponent {
   title = "portfolio";
   fullYear = new Date().getFullYear();
+  isDarkMode = true;
+
+  toggleDarkMode() {
+    this.isDarkMode = !this.isDarkMode;
+  }
 }

@@ -17,5 +17,20 @@
 
 .underline-animation:hover::after {
     transform: scaleX(1);
-    transofrm-origin: bottom left;
+}
+
+.side-to-side-animation {
+    animation: side-to-side ease-in-out 3s infinite;
+}
+
+@keyframes side-to-side {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(40px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }

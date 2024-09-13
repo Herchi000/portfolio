@@ -1,8 +1,8 @@
 <div
-    class="flex flex-col min-w-full min-h-screen bg-white dark:bg-gray-950 transition-colors duration-300"
+    class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-b from-transparent to-sky-100 dark:from-transparent dark:to-sky-950 bg-white dark:bg-gray-950 transition-colors duration-300 overflow-hidden"
 >
     <header
-        class="flex items-center justify-between w-full h-16 border-b-2 border-sky-400 text-sky-400 px-10"
+        class="flex items-center justify-between w-full h-16 text-sky-400 px-10"
     >
         <ul class="flex gap-10">
             <li
@@ -32,7 +32,7 @@
         </ul>
 
         <button
-            class="flex w-9 justify-center text-3xl cursos-pointer hover:text-sky-300 transition-colors duration-100"
+            class="flex w-9 h-9 justify-center items-center text-3xl cursos-pointer rounded-md hover:text-sky-300 hover:bg-gray-400 hover:bg-opacity-20 transition-all duration-100"
             (click)="toggleDarkMode()"
         >
             @if (isDarkMode) {
@@ -43,12 +43,50 @@
         </button>
     </header>
 
+    <!-- --------------------------  -->
+    <!-- ----- Animated squared ---  -->
+    <!-- --------------------------- -->
+    <div
+        class="w-32 h-32 bg-gray-400 opacity-20 absolute right-10 top-40 animate-bounce"
+    ></div>
+
+    <div
+        class="w-10 h-10 bg-gray-700 absolute right-40 top-96 side-to-side-animation"
+    ></div>
+
+    <div
+        class="w-20 h-96 bg-gray-400 opacity-10 absolute right-0 top-80 animate-pulse"
+    ></div>
+
     <main class="text-white">
-        <div>
-            <h1>Hugo Fernández</h1>
-            <p>Desarrollador Web</p>
+        <!-- ---------------  -->
+        <!-- -----Inicio ---  -->
+        <!-- ---------------- -->
+        <div class="flex justify-center gap-4 items-center h-[70vh]">
+            <img
+                src="images/portrait-img.png"
+                alt="Hugo Fernández"
+                class="w-60 h-60 rounded-full border-4 border-sky-400 shadow-lg"
+            />
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2">
+                    <h1 class="text-6xl text-sky-400">Hugo Fernández</h1>
+                    <span class="text-3xl text-gray-300"
+                        >Desarrollador Web</span
+                    >
+                </div>
+                <!-- <p
+                    class="text-gray-300 leading-relaxed border-t-2 border-sky-400 pt-2"
+                >
+                    Soy un apasionado programador recibido de la Universidad
+                    Tecnológica Nacional.
+                </p> -->
+            </div>
         </div>
 
+        <!-- ---------------  -->
+        <!-- --- Proyectos--  -->
+        <!-- ---------------- -->
         <section>
             <h2>Proyectos</h2>
             <ul>

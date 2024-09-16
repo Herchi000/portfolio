@@ -35,6 +35,35 @@
     @apply w-20 h-96 bg-gray-400 opacity-10 absolute animate-pulse;
 }
 
+.cursor-animation {
+    animation: cursor 1s step-end infinite;
+}
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.write-animation {
+    animation: write 1s steps(20) normal;
+}
+
+@keyframes write {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 /* ------------------------------------------------------ */
 /* Floating Square animations */
 

@@ -1,3 +1,5 @@
+/* ------------------------------------------------------ */
+/* Navbar animations */
 .underline-animation {
     position: relative;
 }
@@ -19,8 +21,40 @@
     transform: scaleX(1);
 }
 
+/* ------------------------------------------------------ */
+/* Inicio floating Squares */
+.medium-square {
+    @apply w-32 h-32 bg-gray-400 opacity-20 absolute animate-bounce;
+}
+
+.small-square {
+    @apply w-10 h-10 bg-gray-500 opacity-40 absolute side-to-side-animation;
+}
+
+.big-square {
+    @apply w-20 h-96 bg-gray-400 opacity-10 absolute animate-pulse;
+}
+
+/* ------------------------------------------------------ */
+/* Floating Square animations */
+
+.animate-bounce {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: none;
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
 .side-to-side-animation {
-    animation: side-to-side ease-in-out 3s infinite;
+    animation: side-to-side ease-in-out 5s infinite;
 }
 
 @keyframes side-to-side {
@@ -32,5 +66,15 @@
     }
     100% {
         transform: translateX(0);
+    }
+}
+
+.animate-pulse {
+    animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.4;
     }
 }

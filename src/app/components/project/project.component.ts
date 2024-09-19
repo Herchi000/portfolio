@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, input, OnDestroy, OnInit, QueryList, Renderer2, Signal, viewChild, viewChildren } from "@angular/core";
+import { AfterViewInit, Component, ElementRef, input, OnDestroy, OnInit, Renderer2, Signal, viewChild, viewChildren } from "@angular/core";
 import { Project } from "../../interfaces/project.interface";
 import { interval, Observable, Subscription } from "rxjs";
 import { CommonModule } from "@angular/common";

@@ -4,6 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { ProjectComponent } from './components/project/project.component';
 import { Project } from './interfaces/project.interface';
+import { Contact } from './interfaces/contact.interface';
 
 @Component({
   selector: 'app-root',
@@ -37,6 +38,23 @@ export class AppComponent implements OnInit {
           description: 'Control de productos y stock',
         },
       ],
+    },
+  ];
+  contactItems: Contact[] = [
+    {
+      icon: 'fa-brands fa-whatsapp',
+      text: 'Whatsapp',
+      link: 'https://api.whatsapp.com/send?phone=5493482308468',
+    },
+    {
+      icon: 'fa-brands fa-linkedin',
+      text: 'Linkedin',
+      link: 'https://www.linkedin.com/in/hugo-emanuel-fernandez',
+    },
+    {
+      icon: 'fa-solid fa-envelope',
+      text: 'Email',
+      link: 'hugofer000@gmail.com',
     },
   ];
 

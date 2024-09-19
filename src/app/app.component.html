@@ -227,10 +227,35 @@
           class="w-80 object-contain" />
       </div>
     </section>
+
+    <!-- * ---------------  -->
+    <!-- * --- Contáctame--  -->
+    <!-- * ---------------- -->
+    <section class="flex flex-col items-center mt-40 gap-20">
+      <h2 class="text-4xl">Contáctame</h2>
+      <p class="text-xl text-gray-400">
+        Si te interesa mi trabajo y te gustaría ponerte en contacto conmigo
+        podés hacerlo por los siguientes medios:
+      </p>
+      <div class="flex justify-evenly w-full">
+        @for (contact of contactItems; track contact.text) {
+          <a
+            [href]="contact.link"
+            target="_blank"
+            class="flex flex-col items-center gap-3">
+            <span
+              class="content-center text-center border-2 border-sky-400 rounded-full w-20 h-20">
+              <i [ngClass]="contact.icon" class="text-5xl text-sky-400"></i>
+            </span>
+            <p>{{ contact.text }}</p>
+          </a>
+        }
+      </div>
+    </section>
   </main>
 
   <footer
-    class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400">
+    class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400 mt-20">
     <div class="flex flex-col items-center gap-2">
       <span>Desarrollo hecho por Hugo Fernández</span>
       <p>&copy; {{ fullYear }} | Todos los derechos reservados</p>

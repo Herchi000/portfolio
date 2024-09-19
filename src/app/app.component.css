@@ -1,109 +1,109 @@
 /* ------------------------------------------------------ */
 /* Navbar animations */
 .underline-animation {
-    position: relative;
+  position: relative;
 }
 
 .underline-animation::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: bottom right;
-    transition: all 0.2s ease-in-out;
-    @apply bg-sky-400;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: all 0.2s ease-in-out;
+  @apply bg-sky-400;
 }
 
 .underline-animation:hover::after {
-    transform: scaleX(1);
+  transform: scaleX(1);
 }
 
 /* ------------------------------------------------------ */
 /* Inicio floating Squares */
 .medium-square {
-    @apply w-32 h-32 bg-gray-400 opacity-20 absolute animate-bounce;
+  @apply w-32 h-32 bg-gray-400 opacity-20 absolute animate-bounce;
 }
 
 .small-square {
-    @apply w-10 h-10 bg-gray-500 opacity-40 absolute side-to-side-animation;
+  @apply w-10 h-10 bg-gray-500 opacity-40 absolute side-to-side-animation;
 }
 
 .big-square {
-    @apply w-20 h-96 bg-gray-400 opacity-10 absolute animate-pulse;
+  @apply w-20 h-96 bg-gray-400 opacity-10 absolute animate-pulse;
 }
 
 .cursor-animation {
-    animation: cursor 1s step-end infinite;
+  animation: cursor 1s step-end infinite;
 }
 
 @keyframes cursor {
-    0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .write-animation {
-    animation: write 1s steps(20) normal;
+  animation: write 1s steps(20) normal;
 }
 
 @keyframes write {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 /* ------------------------------------------------------ */
 /* Floating Square animations */
 
 .animate-bounce {
-    animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
 }
 
 @keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-    50% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: none;
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
 .side-to-side-animation {
-    animation: side-to-side ease-in-out 5s infinite;
+  animation: side-to-side ease-in-out 5s infinite;
 }
 
 @keyframes side-to-side {
-    0% {
-        transform: translateX(0);
-    }
-    50% {
-        transform: translateX(40px);
-    }
-    100% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(40px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-pulse {
-    animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @keyframes pulse {
-    50% {
-        opacity: 0.4;
-    }
+  50% {
+    opacity: 0.4;
+  }
 }

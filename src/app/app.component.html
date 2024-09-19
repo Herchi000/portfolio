@@ -1,105 +1,94 @@
 <div
-    class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-100 dark:from-transparent dark:to-sky-950 bg-white dark:bg-gray-950 transition-colors duration-300 overflow-hidden"
->
-    <header
-        class="flex items-center justify-between w-full h-16 text-sky-400 px-10 fixed z-10 top-0"
-    >
-        <ul class="flex gap-10">
-            <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 py-1 cursor-pointer underline-animation"
-            >
-                <i class="fa-solid fa-home"></i>
-                <a href="/">Inicio</a>
-            </li>
-            <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation"
-            >
-                <i class="fa-solid fa-briefcase"></i>
-                <a href="/about">Proyectos</a>
-            </li>
-            <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation"
-            >
-                <i class="fa-solid fa-user"></i>
-                <a href="/portfolio">Sobre mí</a>
-            </li>
-            <li
-                class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation"
-            >
-                <i class="fa-solid fa-envelope"></i>
-                <a href="/contact">Contáctame</a>
-            </li>
-        </ul>
+  class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-100 dark:from-transparent dark:to-sky-950 bg-white dark:bg-gray-950 transition-colors duration-300 overflow-hidden">
+  <header
+    class="flex items-center justify-between w-full h-16 text-sky-400 px-10 fixed z-10 top-0">
+    <ul class="flex gap-10">
+      <li
+        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 py-1 cursor-pointer underline-animation">
+        <i class="fa-solid fa-home"></i>
+        <a href="/">Inicio</a>
+      </li>
+      <li
+        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
+        <i class="fa-solid fa-briefcase"></i>
+        <a href="/about">Proyectos</a>
+      </li>
+      <li
+        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
+        <i class="fa-solid fa-user"></i>
+        <a href="/portfolio">Sobre mí</a>
+      </li>
+      <li
+        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
+        <i class="fa-solid fa-envelope"></i>
+        <a href="/contact">Contáctame</a>
+      </li>
+    </ul>
 
-        <button
-            class="flex w-9 h-9 justify-center items-center text-3xl cursos-pointer rounded-md hover:text-sky-300 hover:bg-gray-400 hover:bg-opacity-20 transition-all duration-100"
-            (click)="toggleDarkMode()"
-        >
-            @if (isDarkMode) {
-                <i class="fa-solid fa-moon"></i>
-            } @else {
-                <i class="fa-solid fa-sun"></i>
-            }
-        </button>
-    </header>
+    <button
+      class="flex w-9 h-9 justify-center items-center text-3xl cursos-pointer rounded-md hover:text-sky-300 hover:bg-gray-400 hover:bg-opacity-20 transition-all duration-100"
+      (click)="toggleDarkMode()">
+      @if (isDarkMode) {
+        <i class="fa-solid fa-moon"></i>
+      } @else {
+        <i class="fa-solid fa-sun"></i>
+      }
+    </button>
+  </header>
 
-    <!-- * --------------------------  -->
-    <!-- * ----- Animated squared ---  -->
-    <!-- * --------------------------- -->
-    <!-- * Left -->
-    <div class="medium-square left-10 top-[32rem]"></div>
+  <!-- * --------------------------  -->
+  <!-- * ----- Animated squared ---  -->
+  <!-- * --------------------------- -->
+  <!-- * Left -->
+  <div class="medium-square left-10 top-[32rem]"></div>
 
-    <div class="small-square left-40 top-60"></div>
+  <div class="small-square left-40 top-60"></div>
 
-    <div class="big-square left-0 top-20"></div>
+  <div class="big-square left-0 top-20"></div>
 
-    <!-- Right -->
-    <div class="medium-square right-10 top-40"></div>
+  <!-- Right -->
+  <div class="medium-square right-10 top-40"></div>
 
-    <div class="small-square right-40 top-96"></div>
+  <div class="small-square right-40 top-96"></div>
 
-    <div class="big-square right-0 top-80"></div>
+  <div class="big-square right-0 top-80"></div>
 
-    <main class="container text-white mx-auto">
-        <!-- * ---------------  -->
-        <!-- * -----Inicio ---  -->
-        <!-- * ---------------- -->
-        <div class="flex justify-center gap-4 items-center h-[80vh]">
-            <img
-                src="images/portrait-img.png"
-                alt="Hugo Fernández"
-                class="w-60 h-60 rounded-full border-4 border-sky-400 shadow-lg"
-            />
-            <div class="flex flex-col gap-4">
-                <div class="flex flex-col gap-2">
-                    <div class="flex h-fit w-[29rem]">
-                        <h1
-                            class="text-nowrap overflow-hidden text-6xl leading-snug write-animation text-sky-400 pr-2"
-                        >
-                            Hugo Fernández
-                        </h1>
-                        <span class="w-1 bg-sky-400 cursor-animation"></span>
-                    </div>
-                    <span class="text-3xl text-gray-300"
-                        >Desarrollador Web</span
-                    >
-                </div>
-            </div>
+  <main class="container text-white mx-auto">
+    <!-- * ---------------  -->
+    <!-- * -----Inicio ---  -->
+    <!-- * ---------------- -->
+    <div class="flex justify-center gap-4 items-center h-[80vh]">
+      <img
+        src="images/portrait-img.png"
+        alt="Hugo Fernández"
+        class="w-60 h-60 rounded-full border-4 border-sky-400 shadow-lg" />
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-2">
+          <div class="flex h-fit w-[29rem]">
+            <h1
+              class="text-nowrap overflow-hidden text-6xl leading-snug write-animation text-sky-400 pr-2">
+              Hugo Fernández
+            </h1>
+            <span class="w-1 bg-sky-400 cursor-animation"></span>
+          </div>
+          <span class="text-3xl text-gray-300">Desarrollador Web</span>
         </div>
+      </div>
+    </div>
 
-        <!-- * ---------------  -->
-        <!-- * --- Proyectos--  -->
-        <!-- * ---------------- -->
-        <section class="flex flex-col items-center">
-            <h2 class="text-4xl">Proyectos</h2>
-            <ul class="flex flex-col items-center mt-40">
-                @for (project of projects; track project.id) {
-                    <li class="h-[90vh]">
-                        <app-project [project]="project"></app-project>
-                    </li>
-                }
+    <!-- * ---------------  -->
+    <!-- * --- Proyectos--  -->
+    <!-- * ---------------- -->
+    <section class="flex flex-col items-center">
+      <h2 class="text-4xl">Proyectos</h2>
+      <ul class="flex flex-col items-center mt-40">
+        @for (project of projects; track project.id) {
+          <li class="h-[90vh]">
+            <app-project [project]="project"></app-project>
+          </li>
+        }
 
-                <!-- <li class="h-screen">
+        <!-- <li class="h-screen">
                     <div class="w-[70vw] grid grid-cols-3 gap-6">
                         <div class="flex flex-col gap-5">
                             <div class="flex items-center gap-4">
@@ -205,30 +194,46 @@
                         </div>
                     </div>
                 </li> -->
-            </ul>
-        </section>
+      </ul>
+    </section>
 
-        <!-- * ---------------  -->
-        <!-- * --- Sobre mi--  -->
-        <!-- * ---------------- -->
-        <section class="flex flex-col items-center">
-            <h2 class="text-4xl">Sobre mí</h2>
-            <div class="flex w-[60vw] gap-10 mt-20">
-                <div class="flex flex-col gap-4">
-                    <h3 class="text-4xl text-sky-400">Hugo Fernández</h3>
-                    <p class="text-gray-400 text-xl leading-relaxed">Accusamus dolorem corrupti laborum maiores aperiam in soluta dolor labore illo inventore, ipsum aut illum nam!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus dolorum porro numquam totam odio. Accusamus dolorem corrupti laborum maiores aperiam in soluta dolor labore illo inventore, ipsum aut illum nam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus dolorum porro numquam totam odio. Accusamus dolorem corrupti laborum maiores aperiam in soluta dolor labore illo inventore, ipsum aut illum nam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus dolorum porro numquam totam odio. Accusamus dolorem corrupti laborum maiores aperiam in soluta dolor labore illo inventore, ipsum aut illum nam!</p>
-                </div>
-                <img src="/images/portrait-img.webp" alt="portrait" class="w-80 object-contain">
-            </div>
-        </section>
-    </main>
-
-    <footer
-        class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400"
-    >
-        <div class="flex flex-col items-center gap-2">
-            <span>Desarrollo hecho por Hugo Fernández</span>
-            <p>&copy; {{ fullYear }} | Todos los derechos reservados</p>
+    <!-- * ---------------  -->
+    <!-- * --- Sobre mi--  -->
+    <!-- * ---------------- -->
+    <section class="flex flex-col items-center">
+      <h2 class="text-4xl">Sobre mí</h2>
+      <div class="flex w-[60vw] gap-10 mt-20">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-4xl text-sky-400">Hugo Fernández</h3>
+          <p class="text-gray-400 text-xl leading-relaxed">
+            Accusamus dolorem corrupti laborum maiores aperiam in soluta dolor
+            labore illo inventore, ipsum aut illum nam!Lorem ipsum dolor sit
+            amet, consectetur adipisicing elit. Repellendus dolorum porro
+            numquam totam odio. Accusamus dolorem corrupti laborum maiores
+            aperiam in soluta dolor labore illo inventore, ipsum aut illum nam!
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Repellendus dolorum porro numquam totam odio. Accusamus dolorem
+            corrupti laborum maiores aperiam in soluta dolor labore illo
+            inventore, ipsum aut illum nam! Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit. Repellendus dolorum porro numquam
+            totam odio. Accusamus dolorem corrupti laborum maiores aperiam in
+            soluta dolor labore illo inventore, ipsum aut illum nam!
+          </p>
         </div>
-    </footer>
+
+        <img
+          src="/images/portrait-img.webp"
+          alt="portrait"
+          class="w-80 object-contain" />
+      </div>
+    </section>
+  </main>
+
+  <footer
+    class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400">
+    <div class="flex flex-col items-center gap-2">
+      <span>Desarrollo hecho por Hugo Fernández</span>
+      <p>&copy; {{ fullYear }} | Todos los derechos reservados</p>
+    </div>
+  </footer>
 </div>

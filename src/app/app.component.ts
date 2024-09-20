@@ -56,6 +56,11 @@ export class AppComponent implements OnInit {
       text: 'Email',
       link: 'hugofer000@gmail.com',
     },
+    {
+      icon: 'fa-brands fa-github',
+      text: 'GitHub',
+      link: 'https://github.com/Herchi000',
+    },
   ];
 
   private themeService = inject(ThemeService);

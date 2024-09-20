@@ -249,10 +249,10 @@
           <a
             [href]="contact.link"
             target="_blank"
-            class="flex flex-col items-center gap-3">
+            class="flex flex-col items-center gap-3 bg-gray-500 bg-opacity-0 hover:bg-opacity-10 p-2 rounded-md">
             <span
-              class="content-center text-center border-2 border-sky-400 rounded-full w-20 h-20">
-              <i [ngClass]="contact.icon" class="text-5xl text-sky-400"></i>
+              class="content-center text-center border-2 border-sky-400 text-sky-400 rounded-full w-20 h-20">
+              <i [ngClass]="contact.icon" class="text-5xl"></i>
             </span>
             <p>{{ contact.text }}</p>
           </a>

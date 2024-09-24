@@ -43,6 +43,31 @@ export class AppComponent implements OnInit {
         },
       ],
     },
+    {
+      id: 2,
+      title: 'Prysoft - RRHH',
+      subtitle: 'Gestión de Recursos Humanos',
+      description:
+        'Utilizado por importante empresa del sector manufacturero. Programa hecho para optimizar la gestión del personal, con el objetivo de facilitar la administración de empleados, turnos, vacaciones y mensajería interna. Permite llevar un control detallado de los empleados, sus horarios, permisos y vacaciones, así como también la comunicación interna entre los miembros de la empresa.',
+      images: [
+        {
+          url: 'images/img-project-5.webp',
+          description: 'Listado e información de empleados',
+        },
+        {
+          url: 'images/img-project-6.webp',
+          description: 'Mensajería',
+        },
+        {
+          url: 'images/img-project-7.webp',
+          description: 'Creación y gestión de turnos',
+        },
+        {
+          url: 'images/img-project-8.webp',
+          description: 'Gestión de vacaciones',
+        },
+      ],
+    },
   ];
   contactItems: Contact[] = [
     {

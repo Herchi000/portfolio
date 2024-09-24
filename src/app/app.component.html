@@ -89,9 +89,9 @@
     <section class="flex flex-col items-center">
       <h2 class="text-4xl">Proyectos</h2>
       <ul class="flex flex-col items-center mt-40">
-        @for (project of projects; track project.id) {
+        @for (project of projects; track project.id; let even = $even) {
           <li class="h-[90vh]">
-            <app-project [project]="project"></app-project>
+            <app-project [project]="project" [imageLeft]="!even"></app-project>
           </li>
         }
 

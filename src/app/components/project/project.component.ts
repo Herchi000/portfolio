@@ -23,6 +23,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ProjectComponent implements OnInit, OnDestroy, AfterViewInit {
   project = input.required<Project>();
+  imageLeft = input<boolean>();
   imageSliderRef: Signal<ElementRef | undefined> = viewChild('imageSliderRef');
   imagesRef: Signal<readonly ElementRef[]> = viewChildren('imageRef');
   imageSliderIndex: number = 0;

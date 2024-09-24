@@ -1,7 +1,16 @@
-<div class="w-[70vw] grid grid-cols-3 gap-6">
+<div
+  class="w-[70vw] grid gap-6"
+  [ngClass]="{
+    'grid-cols-2': project().isMobile,
+    'grid-cols-3': !project().isMobile,
+  }">
   @if (imageLeft()) {
-    <div class="flex flex-col gap-4 col-span-2">
-      <div class="overflow-hidden">
+    <div
+      class="flex flex-col gap-4 col-span-2"
+      [ngClass]="{ 'col-span-2': !project().isMobile }">
+      <div
+        class="overflow-hidden"
+        [ngClass]="{ 'w-[19rem]': project().isMobile }">
         <div #imageSliderRef class="flex relative">
           @for (image of project().images; track image.url) {
             <img
@@ -47,8 +56,12 @@
   </div>
 
   @if (!imageLeft()) {
-    <div class="flex flex-col gap-4 col-span-2">
-      <div class="overflow-hidden">
+    <div
+      class="flex flex-col gap-4 items-center"
+      [ngClass]="{ 'col-span-2': !project().isMobile }">
+      <div
+        class="overflow-hidden"
+        [ngClass]="{ 'w-[19rem]': project().isMobile }">
         <div #imageSliderRef class="flex relative">
           @for (image of project().images; track image.url) {
             <img

@@ -4,4 +4,5 @@ export interface Project {
   subtitle: string;
   description: string;
   images: { url: string; description: string }[];
+  isMobile: boolean;
 }

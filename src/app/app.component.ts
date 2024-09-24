@@ -42,13 +42,14 @@ export class AppComponent implements OnInit {
           description: 'Generación de etiquetas',
         },
       ],
+      isMobile: false,
     },
     {
       id: 2,
-      title: 'Prysoft - RRHH',
+      title: 'Prysoft - RRHH Escritorio',
       subtitle: 'Gestión de Recursos Humanos',
       description:
-        'Utilizado por importante empresa del sector manufacturero. Programa hecho para optimizar la gestión del personal, con el objetivo de facilitar la administración de empleados, turnos, vacaciones y mensajería interna. Permite llevar un control detallado de los empleados, sus horarios, permisos y vacaciones, así como también la comunicación interna entre los miembros de la empresa.',
+        'Utilizado por importante empresa del sector manufacturero. Creada para el personal de RRHH, programa hecho para optimizar la gestión del personal, con el objetivo de facilitar la administración de empleados, turnos, vacaciones y mensajería interna. Permite llevar un control detallado de los empleados, sus horarios, permisos y vacaciones, así como también la comunicación interna entre los miembros de la empresa.',
       images: [
         {
           url: 'images/img-project-5.webp',
@@ -67,6 +68,33 @@ export class AppComponent implements OnInit {
           description: 'Gestión de vacaciones',
         },
       ],
+      isMobile: false,
+    },
+    {
+      id: 3,
+      title: 'Prysoft - RRHH Móvil',
+      subtitle: 'Aplicación móvil para empleados',
+      description:
+        'Aplicación móvil de Recursos Humanos diseñada para empleados, facilita la consulta de horarios, la solicitud de permisos y vacaciones, y la comunicación directa con el equipo de Recursos Humanos. Totalmente sincronizada con el sistema de gestión de la empresa, esta herramienta permite a los empleados acceder a su información laboral de forma rápida y segura, desde cualquier lugar y en cualquier momento. En conjunto con la aplicación de escritorio, se logra una gestión integral y eficiente de los recursos humanos de la empresa.',
+      images: [
+        {
+          url: 'images/img-project-9.webp',
+          description: 'Interfaz sencilla',
+        },
+        {
+          url: 'images/img-project-10.webp',
+          description: 'Mensajería',
+        },
+        {
+          url: 'images/img-project-11.webp',
+          description: 'Ver turnos',
+        },
+        {
+          url: 'images/img-project-12.webp',
+          description: 'Solicitud de vacaciones',
+        },
+      ],
+      isMobile: true,
     },
   ];
   contactItems: Contact[] = [

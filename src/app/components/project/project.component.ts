@@ -30,7 +30,7 @@ export class ProjectComponent implements OnInit, OnDestroy, AfterViewInit {
   private imgSliderAnimation = new Subscription();
 
   constructor(private renderer2: Renderer2) {
-    this.intervalo = interval(4000);
+    this.intervalo = interval(5000);
   }
 
   ngOnInit(): void {

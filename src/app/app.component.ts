@@ -23,19 +23,23 @@ export class AppComponent implements OnInit {
       title: 'Prysoft - Punto De Venta',
       subtitle: 'Gestión de ventas para pequeños comerciantes',
       description:
-        'Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T.)',
+        'Software diseñado para la gestión integral de ventas y productos en pequeños comercios, utilizado por decenas de comerciantes en diversas provincias. Ofrece una plataforma intuitiva para administrar inventarios, agregar stock, realizar ventas, emitir facturas y generar etiquetas personalizadas, entre otras múltiples funcionalidades que optimizan el control y la eficiencia del negocio.',
       images: [
         {
-          url: 'images/img-project-1.jpeg',
-          description: 'Gestión de ventas',
+          url: 'images/img-project-1.webp',
+          description: 'Gestión de productos',
         },
         {
-          url: 'images/img-project-2.jpeg',
-          description: 'Emisión de facturas',
+          url: 'images/img-project-2.webp',
+          description: 'Ventas y facturación',
         },
         {
-          url: 'images/img-project-3.jpeg',
-          description: 'Control de productos y stock',
+          url: 'images/img-project-3.webp',
+          description: 'Estadísticas de ventas',
+        },
+        {
+          url: 'images/img-project-4.webp',
+          description: 'Generación de etiquetas',
         },
       ],
     },

@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
         },
         {
           url: 'images/img-project-11.webp',
-          description: 'Ver turnos',
+          description: 'Visualización de turnos',
         },
         {
           url: 'images/img-project-12.webp',

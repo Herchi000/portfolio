@@ -5,11 +5,13 @@ import { ThemeService } from './services/theme.service';
 import { ProjectComponent } from './components/project/project.component';
 import { Project } from './interfaces/project.interface';
 import { Contact } from './interfaces/contact.interface';
+import { SkillItemComponent } from './components/skill-item/skill-item.component';
+import { Skill } from './interfaces/skill.interface';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ProjectComponent],
+  imports: [RouterOutlet, CommonModule, ProjectComponent, SkillItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -117,6 +119,88 @@ export class AppComponent implements OnInit {
       icon: 'fa-brands fa-github',
       text: 'GitHub',
       link: 'https://github.com/Herchi000',
+    },
+  ];
+  skillItems: Skill[] = [
+    {
+      id: 1,
+      name: 'HTML',
+      icon: '/icons/icon-html5.svg',
+    },
+    {
+      id: 2,
+      name: 'CSS',
+      icon: '/icons/icon-css3.svg',
+    },
+    {
+      id: 3,
+      name: 'Tailwind',
+      icon: '/icons/icon-tailwindcss.svg',
+    },
+    {
+      id: 4,
+      name: 'JavaScript',
+      icon: '/icons/icon-javascript.svg',
+    },
+    {
+      id: 5,
+      name: 'TypeScript',
+      icon: '/icons/icon-typescript.svg',
+    },
+    {
+      id: 6,
+      name: 'Angular',
+      icon: '/icons/icon-angular.svg',
+    },
+    {
+      id: 7,
+      name: 'React',
+      icon: '/icons/icon-react.svg',
+    },
+    {
+      id: 8,
+      name: 'NextJS',
+      icon: '/icons/icon-nextjs.svg',
+    },
+    {
+      id: 9,
+      name: 'NodeJS',
+      icon: '/icons/icon-nodejs.svg',
+    },
+    {
+      id: 10,
+      name: 'Express',
+      icon: '/icons/icon-express.svg',
+    },
+    {
+      id: 11,
+      name: 'Terminal',
+      icon: '/icons/icon-linux.svg',
+    },
+    {
+      id: 12,
+      name: 'Docker',
+      icon: '/icons/icon-docker.svg',
+    },
+    {
+      id: 13,
+      name: 'SQL',
+      icon: '/icons/icon-sql.svg',
+    },
+    {
+      id: 14,
+      name: 'MongoDB',
+      icon: '/icons/icon-mongodb.svg',
+    },
+    {
+      id: 15,
+      name: 'Git',
+      icon: '/icons/icon-git.svg',
+    },
+    {
+      id: 16,
+      name: 'GitHub',
+      icon: '/icons/icon-github.svg',
     },
   ];
 

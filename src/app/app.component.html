@@ -207,7 +207,7 @@
     <!-- * ---------------  -->
     <!-- * --- Sobre mi--  -->
     <!-- * ---------------- -->
-    <section class="flex flex-col items-center">
+    <section class="flex flex-col items-center mt-40">
       <h2 class="text-4xl">Sobre mí</h2>
       <div class="flex w-[60vw] gap-10 mt-20">
         <div class="flex flex-col gap-4">
@@ -240,6 +240,37 @@
           src="/images/portrait-img.webp"
           alt="portrait"
           class="w-80 object-contain" />
+      </div>
+    </section>
+
+    <section class="flex flex-col items-center mt-40 gap-4">
+      <h2 class="text-4xl">Habilidades</h2>
+      <div
+        class="flex w-[62vw] flex-wrap justify-center gap-x-32 gap-y-12 items-center mt-10">
+        @for (skill of skillItems; track skill.id) {
+          <app-skill-item [skill]="skill"></app-skill-item>
+        }
+      </div>
+      <div class="grid grid-cols-2 gap-x-10 gap-y-6 mt-10 text-gray-400">
+        <div class="flex items-center py-4 px-8 gap-3">
+          <i class="fa-solid fa-users text-3xl"></i>
+          <span class="text-lg font-mono">Trabajo en equipo</span>
+        </div>
+
+        <div class="flex items-center py-4 px-8 gap-3">
+          <i class="fa-solid fa-comments text-3xl"></i>
+          <span class="text-lg font-mono">Buena comunicación</span>
+        </div>
+
+        <div class="flex items-center py-4 px-8 gap-3">
+          <i class="fa-solid fa-book text-3xl"></i>
+          <span class="text-lg font-mono">Autodidacta</span>
+        </div>
+
+        <div class="flex items-center py-4 px-8 gap-3">
+          <i class="fa-solid fa-arrow-rotate-right text-3xl"></i>
+          <span class="text-lg font-mono">Adaptabilidad al cambio</span>
+        </div>
       </div>
     </section>
 

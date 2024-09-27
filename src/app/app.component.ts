@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { ProjectComponent } from './components/project/project.component';
 import { Project } from './interfaces/project.interface';
@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   fullYear = new Date().getFullYear();
   isDarkMode = false;
-  projects: Project[] = [
+  projectCards: Project[] = [
     {
       id: 1,
       title: 'Prysoft - Punto De Venta',
@@ -206,6 +206,8 @@ export class AppComponent implements OnInit {
 
   private themeService = inject(ThemeService);
 
+  constructor(private router: Router) {}
+
   ngOnInit() {
     this.themeService.loadTheme();
     this.isDarkMode = localStorage.getItem('theme') === 'dark';
@@ -217,6 +219,17 @@ export class AppComponent implements OnInit {
         this.themeService.toggleTheme(systemPrefersDark);
         this.isDarkMode = systemPrefersDark;
       });
+
+    this.router.events.subscribe(event => {
+      if (!(event instanceof NavigationEnd)) {
+        return;
+      }
+      window.scrollTo(0, 0);
+    });
+  }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({ behavior: 'smooth' });
   }
 
   toggleDarkMode() {

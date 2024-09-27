@@ -3,25 +3,29 @@
   <header
     class="flex items-center justify-between w-full h-16 text-sky-400 px-10 fixed z-10 top-0">
     <ul class="flex gap-10">
-      <li
-        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 py-1 cursor-pointer underline-animation">
-        <i class="fa-solid fa-home"></i>
-        <a href="/">Inicio</a>
+      <li>
+        <button (click)="scroll(home)" class="nav-button">
+          <i class="fa-solid fa-home"></i>
+          <span>Inicio</span>
+        </button>
       </li>
-      <li
-        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
-        <i class="fa-solid fa-briefcase"></i>
-        <a href="/about">Proyectos</a>
+      <li>
+        <button (click)="scroll(projects)" class="nav-button">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Proyectos</span>
+        </button>
       </li>
-      <li
-        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
-        <i class="fa-solid fa-user"></i>
-        <a href="/portfolio">Sobre mí</a>
+      <li>
+        <button (click)="scroll(aboutMe)" class="nav-button">
+          <i class="fa-solid fa-user"></i>
+          <span>Sobre mí</span>
+        </button>
       </li>
-      <li
-        class="flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 cursor-pointer underline-animation">
-        <i class="fa-solid fa-envelope"></i>
-        <a href="/contact">Contáctame</a>
+      <li>
+        <button (click)="scroll(contactMe)" class="nav-button">
+          <i class="fa-solid fa-envelope"></i>
+          <span>Contáctame</span>
+        </button>
       </li>
     </ul>
 
@@ -57,7 +61,7 @@
     <!-- * ---------------  -->
     <!-- * -----Inicio ---  -->
     <!-- * ---------------- -->
-    <div class="flex justify-center gap-4 items-center h-[90vh]">
+    <div #home class="flex justify-center gap-4 items-center h-[90vh]">
       <img
         src="images/portrait-img.png"
         alt="Hugo Fernández"
@@ -86,10 +90,10 @@
     <!-- * ---------------  -->
     <!-- * --- Proyectos--  -->
     <!-- * ---------------- -->
-    <section class="flex flex-col items-center">
+    <section #projects class="flex flex-col items-center">
       <h2 class="text-4xl">Proyectos</h2>
       <ul class="flex flex-col items-center mt-40">
-        @for (project of projects; track project.id; let even = $even) {
+        @for (project of projectCards; track project.id; let even = $even) {
           <li class="h-[90vh]">
             <app-project [project]="project" [imageLeft]="!even"></app-project>
           </li>
@@ -207,7 +211,7 @@
     <!-- * ---------------  -->
     <!-- * --- Sobre mi--  -->
     <!-- * ---------------- -->
-    <section class="flex flex-col items-center mt-40">
+    <section #aboutMe class="flex flex-col items-center mt-40">
       <h2 class="text-4xl">Sobre mí</h2>
       <div class="flex w-[60vw] gap-10 mt-20">
         <div class="flex flex-col gap-4">
@@ -277,7 +281,7 @@
     <!-- * ---------------  -->
     <!-- * --- Contáctame--  -->
     <!-- * ---------------- -->
-    <section class="flex flex-col items-center mt-40 gap-20">
+    <section #contactMe class="flex flex-col items-center mt-40 gap-20">
       <h2 class="text-4xl">Contáctame</h2>
       <p class="text-xl text-gray-400">
         Si te interesa mi trabajo y te gustaría ponerte en contacto conmigo

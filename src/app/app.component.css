@@ -21,6 +21,10 @@
   transform: scaleX(1);
 }
 
+.nav-button {
+  @apply flex gap-2 items-center hover:text-sky-300 transition-colors duration-75 py-1 cursor-pointer underline-animation;
+}
+
 /* ------------------------------------------------------ */
 /* Inicio floating Squares */
 .medium-square {

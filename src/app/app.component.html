@@ -1,7 +1,7 @@
 <div
-  class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-100 dark:from-transparent dark:to-sky-950 bg-white dark:bg-gray-950 transition-colors duration-300 overflow-hidden">
+  class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-200 dark:from-transparent dark:to-sky-950 bg-gray-100 dark:bg-gray-950 transition-colors duration-300 overflow-hidden">
   <header
-    class="flex items-center justify-between w-full h-16 text-sky-400 px-10 fixed z-10 top-0">
+    class="flex items-center justify-between w-full h-16 text-sky-600 dark:text-sky-400 px-10 fixed z-10 top-0">
     <ul class="flex gap-10">
       <li>
         <button (click)="scroll(home)" class="nav-button">
@@ -65,21 +65,21 @@
       <img
         src="images/portrait-img.png"
         alt="Hugo Fernández"
-        class="w-60 h-60 rounded-full border-4 border-sky-400 shadow-lg" />
+        class="w-60 h-60 rounded-full border-4 border-sky-600 dark:border-sky-400 shadow-lg" />
       <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-2">
+        <div class="flex flex-col gap-2 text-sky-600 dark:text-sky-400">
           <div class="flex h-fit w-[29rem]">
             <h1
-              class="text-nowrap overflow-hidden text-6xl leading-snug write-animation text-sky-400 pr-2">
+              class="text-nowrap overflow-hidden text-6xl leading-snug write-animation pr-2">
               Hugo Fernández
             </h1>
             <span class="w-1 bg-sky-400 cursor-animation"></span>
           </div>
-          <span class="text-3xl text-gray-300"
+          <span class="text-3xl text-gray-600 dark:text-gray-300"
             >Programador y desarrollador Frontend</span
           >
           <button
-            class="flex items-center justify-center border-2 border-sky-400 text-sky-400 px-3 py-2 rounded-full hover:bg-sky-950 transition-colors duration-100 gap-2 mt-3">
+            class="flex items-center justify-center border-2 border-sky-600 dark:border-sky-400 px-3 py-2 rounded-full bg-sky-600 bg-opacity-0 hover:bg-opacity-5 transition-colors duration-100 gap-2 mt-3">
             Descargar CV
             <i class="fa-solid fa-arrow-down"></i>
           </button>
@@ -91,7 +91,7 @@
     <!-- * --- Proyectos--  -->
     <!-- * ---------------- -->
     <section #projects class="flex flex-col items-center">
-      <h2 class="text-4xl">Proyectos</h2>
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Proyectos</h2>
       <ul class="flex flex-col items-center mt-40">
         @for (project of projectCards; track project.id; let even = $even) {
           <li class="h-[90vh]">
@@ -212,18 +212,25 @@
     <!-- * --- Sobre mi--  -->
     <!-- * ---------------- -->
     <section #aboutMe class="flex flex-col items-center mt-40">
-      <h2 class="text-4xl">Sobre mí</h2>
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Sobre mí</h2>
       <div class="flex w-[60vw] gap-10 mt-20">
         <div class="flex flex-col gap-4">
-          <h3 class="text-4xl text-sky-400">Hola, me llamo Hugo 👋</h3>
-          <div class="flex flex-col text-gray-400 text-lg leading-loose gap-6">
+          <h3 class="text-4xl text-sky-600 dark:text-sky-400">
+            Hola, me llamo Hugo 👋
+          </h3>
+          <div
+            class="flex flex-col text-gray-600 dark:text-gray-400 text-lg leading-loose gap-6">
             <p>
               Soy un desarrollador
-              <span class="text-sky-400">FRONTEND</span> con sólidos
-              conocimientos en <span class="text-sky-400">BACKEND</span>,
-              graduado en la Universidad Tecnológica Nacional. Cuento con 2 años
-              de experiencia en el desarrollo de software y aplicaciones web,
-              donde he trabajado con una amplia gama de tecnologías.
+              <span class="text-sky-600 dark:text-sky-400 font-semibold"
+                >FRONTEND</span
+              >
+              con sólidos conocimientos en
+              <span class="text-sky-600 dark:text-sky-400 font-semibold"
+                >BACKEND</span
+              >, graduado en la Universidad Tecnológica Nacional. Cuento con 2
+              años de experiencia en el desarrollo de software y aplicaciones
+              web, donde he trabajado con una amplia gama de tecnologías.
             </p>
             <p>
               En mi carrera, he enfrentado y resuelto desafíos relacionados con
@@ -247,15 +254,19 @@
       </div>
     </section>
 
+    <!-- * -----------------  -->
+    <!-- * --- Habilidades--  -->
+    <!-- * ------------------ -->
     <section class="flex flex-col items-center mt-40 gap-4">
-      <h2 class="text-4xl">Habilidades</h2>
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Habilidades</h2>
       <div
         class="flex w-[62vw] flex-wrap justify-center gap-x-32 gap-y-12 items-center mt-10">
         @for (skill of skillItems; track skill.id) {
           <app-skill-item [skill]="skill"></app-skill-item>
         }
       </div>
-      <div class="grid grid-cols-2 gap-x-10 gap-y-6 mt-10 text-gray-400">
+      <div
+        class="grid grid-cols-2 gap-x-10 gap-y-6 mt-10 text-gray-600 dark:text-gray-400">
         <div class="flex items-center py-4 px-8 gap-3">
           <i class="fa-solid fa-users text-3xl"></i>
           <span class="text-lg font-mono">Trabajo en equipo</span>
@@ -282,8 +293,8 @@
     <!-- * --- Contáctame--  -->
     <!-- * ---------------- -->
     <section #contactMe class="flex flex-col items-center mt-40 gap-20">
-      <h2 class="text-4xl">Contáctame</h2>
-      <p class="text-xl text-gray-400">
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Contáctame</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-400">
         Si te interesa mi trabajo y te gustaría ponerte en contacto conmigo
         podés hacerlo por los siguientes medios:
       </p>
@@ -294,10 +305,10 @@
             target="_blank"
             class="flex flex-col items-center gap-3 bg-gray-500 bg-opacity-0 hover:bg-opacity-10 p-2 rounded-md">
             <span
-              class="content-center text-center border-2 border-sky-400 text-sky-400 rounded-full w-20 h-20">
+              class="content-center text-center border-2 border-sky-600 dark:border-sky-400 text-sky-600 dark:text-sky-400 rounded-full w-20 h-20">
               <i [ngClass]="contact.icon" class="text-5xl"></i>
             </span>
-            <p>{{ contact.text }}</p>
+            <p class="text-gray-600 dark:text-gray-100">{{ contact.text }}</p>
           </a>
         }
       </div>
@@ -305,7 +316,7 @@
   </main>
 
   <footer
-    class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-400 mt-40">
+    class="flex justify-center items-center h-20 border-t-2 border-sky-600 text-gray-600 dark:text-gray-400 mt-40">
     <div class="flex flex-col items-center gap-2">
       <span>Desarrollo y diseño hecho por Hugo Fernández</span>
       <p>&copy; {{ fullYear }} | Todos los derechos reservados</p>

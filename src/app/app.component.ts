@@ -1,5 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  inject,
+  OnInit,
+  Renderer2,
+  Signal,
+  viewChild,
+} from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { ThemeService } from './services/theme.service';
 import { ProjectComponent } from './components/project/project.component';
@@ -19,6 +27,10 @@ export class AppComponent implements OnInit {
   title = 'portfolio';
   fullYear = new Date().getFullYear();
   isDarkMode = false;
+  mobileMenu: Signal<ElementRef | undefined> = viewChild('mobileMenu');
+  burgerButton: Signal<ElementRef | undefined> = viewChild('burgerButton');
+  isDisplayed = false;
+
   projectCards: Project[] = [
     {
       id: 1,
@@ -206,7 +218,10 @@ export class AppComponent implements OnInit {
 
   private themeService = inject(ThemeService);
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private renderer2: Renderer2
+  ) {}
 
   ngOnInit() {
     this.themeService.loadTheme();
@@ -226,6 +241,21 @@ export class AppComponent implements OnInit {
       }
       window.scrollTo(0, 0);
     });
+  }
+
+  toggleMenu() {
+    const mobileMenuHTML = this.mobileMenu()?.nativeElement;
+    const burgerButtonHTML = this.burgerButton()?.nativeElement;
+
+    if (this.isDisplayed) {
+      this.renderer2.setStyle(mobileMenuHTML, 'top', '-100');
+      this.renderer2.removeClass(burgerButtonHTML, 'header-icon');
+    } else {
+      this.renderer2.setStyle(mobileMenuHTML, 'top', '4rem');
+      this.renderer2.addClass(burgerButtonHTML, 'header-icon');
+    }
+
+    this.isDisplayed = !this.isDisplayed;
   }
 
   scroll(el: HTMLElement) {

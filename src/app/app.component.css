@@ -25,6 +25,21 @@
   @apply flex gap-2 items-center transition-colors duration-75 py-1 cursor-pointer underline-animation;
 }
 
+/* ---------------------------------------------------------- */
+/* Mobile Menu */
+.header-icon div:first-child{
+  transform: rotate(45deg);
+}
+
+.header-icon div:nth-child(2){
+  opacity: 0;
+}
+
+.header-icon div:nth-child(3){
+  transform: rotate(-45deg);
+}
+
+
 /* ------------------------------------------------------ */
 /* Inicio floating Squares */
 .medium-square {

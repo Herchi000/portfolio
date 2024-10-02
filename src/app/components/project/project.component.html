@@ -1,14 +1,14 @@
 <div
-  class="w-[70vw] grid gap-6"
+  class="w-11/12 container flex flex-col lg:grid gap-6 mx-auto"
   [ngClass]="{
     'grid-cols-2': project().isMobile,
     'grid-cols-3': !project().isMobile,
   }">
   <div
-    class="flex flex-col items-center gap-4 col-span-2"
+    class="flex flex-col items-center gap-4"
     [ngClass]="{
       'col-span-2': !project().isMobile,
-      'order-last': !imageLeft(),
+      'lg:order-last': !imageLeft(),
     }">
     <div
       class="overflow-hidden"
@@ -18,8 +18,9 @@
           <img
             #imageRef
             [src]="image.url"
-            alt="project 1"
-            class="object-contain rounded-lg" />
+            [alt]="image.description"
+            class="object-contain rounded-lg"
+            [ngClass]="{ 'md:h-[33rem]': !project().isMobile }" />
         }
       </div>
     </div>
@@ -33,9 +34,10 @@
           class="w-3 h-3 rounded-full border-2 border-gray-500 dark:border-white"></span>
       }
     </div>
-    <span class="text-center text-2xl text-gray-700 dark:text-gray-100">{{
-      project().images[imageSliderIndex].description
-    }}</span>
+    <span
+      class="text-center text-2xl text-gray-700 dark:text-gray-100 hidden lg:block"
+      >{{ project().images[imageSliderIndex].description }}</span
+    >
   </div>
 
   <div class="flex flex-col gap-5">

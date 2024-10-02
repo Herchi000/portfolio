@@ -1,43 +1,88 @@
 <div
-  class="relative flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-200 dark:from-transparent dark:to-sky-950 bg-gray-100 dark:bg-gray-950 transition-colors duration-300 overflow-hidden">
-  <header
-    class="flex items-center justify-between w-full h-16 text-sky-600 dark:text-sky-400 px-10 fixed z-10 top-0">
-    <ul class="flex gap-10">
-      <li>
-        <button (click)="scroll(home)" class="nav-button">
-          <i class="fa-solid fa-home"></i>
-          <span>Inicio</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scroll(projects)" class="nav-button">
-          <i class="fa-solid fa-briefcase"></i>
-          <span>Proyectos</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scroll(aboutMe)" class="nav-button">
-          <i class="fa-solid fa-user"></i>
-          <span>Sobre mí</span>
-        </button>
-      </li>
-      <li>
-        <button (click)="scroll(contactMe)" class="nav-button">
-          <i class="fa-solid fa-envelope"></i>
-          <span>Contáctame</span>
-        </button>
-      </li>
-    </ul>
+  class="relative container flex flex-col min-w-full min-h-screen bg-gradient-to-r from-transparent to-sky-200 dark:from-transparent dark:to-sky-950 bg-gray-100 dark:bg-gray-950 transition-colors duration-300 overflow-hidden">
+  <header>
+    <div
+      class="hidden lg:flex items-center justify-between w-full h-16 text-sky-600 dark:text-sky-400 px-10 fixed z-10 top-0">
+      <ul class="flex gap-10">
+        <li>
+          <button (click)="scroll(home)" class="nav-button">
+            <i class="fa-solid fa-home"></i>
+            <span>Inicio</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(projects)" class="nav-button">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Proyectos</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(aboutMe)" class="nav-button">
+            <i class="fa-solid fa-user"></i>
+            <span>Sobre mí</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(contactMe)" class="nav-button">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contáctame</span>
+          </button>
+        </li>
+      </ul>
 
-    <button
-      class="flex w-9 h-9 justify-center items-center text-3xl cursos-pointer rounded-md hover:text-sky-300 hover:bg-gray-400 hover:bg-opacity-20 transition-all duration-100"
-      (click)="toggleDarkMode()">
-      @if (isDarkMode) {
-        <i class="fa-solid fa-moon"></i>
-      } @else {
-        <i class="fa-solid fa-sun"></i>
-      }
-    </button>
+      <button
+        class="flex w-9 h-9 justify-center items-center text-3xl cursos-pointer rounded-md hover:text-sky-300 hover:bg-gray-400 hover:bg-opacity-20 transition-all duration-100"
+        (click)="toggleDarkMode()">
+        @if (isDarkMode) {
+          <i class="fa-solid fa-moon"></i>
+        } @else {
+          <i class="fa-solid fa-sun"></i>
+        }
+      </button>
+    </div>
+
+    <div class="fixed flex lg:hidden z-10">
+      <button
+        (click)="toggleMenu()"
+        class="flex flex-col lg:hidden justify-center w-10 ml-auto bg-transparent gap-2.5"
+        #burgerButton>
+        <div
+          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+        <div
+          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+        <div
+          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+      </button>
+
+      <ul
+        class="flex flex-col fixed w-full h-full bg-gray-600 -top-full transition-all duration-500"
+        #mobileMenu>
+        <li>
+          <button (click)="scroll(home)" class="nav-button">
+            <i class="fa-solid fa-home"></i>
+            <span>Inicio</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(projects)" class="nav-button">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Proyectos</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(aboutMe)" class="nav-button">
+            <i class="fa-solid fa-user"></i>
+            <span>Sobre mí</span>
+          </button>
+        </li>
+        <li>
+          <button (click)="scroll(contactMe)" class="nav-button">
+            <i class="fa-solid fa-envelope"></i>
+            <span>Contáctame</span>
+          </button>
+        </li>
+      </ul>
+    </div>
   </header>
 
   <!-- * --------------------------  -->
@@ -61,21 +106,24 @@
     <!-- * ---------------  -->
     <!-- * -----Inicio ---  -->
     <!-- * ---------------- -->
-    <div #home class="flex justify-center gap-4 items-center h-[90vh]">
+    <div
+      #home
+      class="flex flex-col md:flex-row justify-center gap-4 items-center h-[90vh]">
       <img
         src="images/portrait-img.png"
         alt="Hugo Fernández"
-        class="w-60 h-60 rounded-full border-4 border-sky-600 dark:border-sky-400 shadow-lg" />
+        class="w-40 h-40 md:w-60 md:h-60 rounded-full border-4 border-sky-600 dark:border-sky-400 shadow-lg" />
       <div class="flex flex-col gap-4">
-        <div class="flex flex-col gap-2 text-sky-600 dark:text-sky-400">
-          <div class="flex h-fit w-[29rem]">
+        <div
+          class="flex flex-col items-center md:items-stretch gap-2 text-sky-600 dark:text-sky-400">
+          <div class="flex h-fit w-60 md:w-[29rem]">
             <h1
-              class="text-nowrap overflow-hidden text-6xl leading-snug write-animation pr-2">
+              class="text-nowrap overflow-hidden text-3xl md:text-6xl leading-snug write-animation pr-2">
               Hugo Fernández
             </h1>
             <span class="w-1 bg-sky-400 cursor-animation"></span>
           </div>
-          <span class="text-3xl text-gray-600 dark:text-gray-300"
+          <span class="text-xl md:text-3xl text-gray-600 dark:text-gray-300"
             >Programador y desarrollador Frontend</span
           >
           <button
@@ -92,119 +140,12 @@
     <!-- * ---------------- -->
     <section #projects class="flex flex-col items-center">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Proyectos</h2>
-      <ul class="flex flex-col items-center mt-40">
+      <ul class="flex flex-col items-center mt-40 gap-80">
         @for (project of projectCards; track project.id; let even = $even) {
-          <li class="h-[90vh]">
+          <li class="">
             <app-project [project]="project" [imageLeft]="!even"></app-project>
           </li>
         }
-
-        <!-- <li class="h-screen">
-                    <div class="w-[70vw] grid grid-cols-3 gap-6">
-                        <div class="flex flex-col gap-5">
-                            <div class="flex items-center gap-4">
-                                <span
-                                    class="w-2 h-2 bg-sky-400 rounded-full"
-                                ></span>
-                                <p class="text-xl font-bold text-sky-400">01</p>
-                            </div>
-                            <h3 class="text-3xl text-sky-400 font-bold">
-                                Prysoft - Punto De Venta
-                            </h3>
-                            <p class="text-xl">
-                                Aplicación de gestión de ventas para pequeños
-                                comerciantes
-                            </p>
-                            <p class="text-gray-400 leading-loose">
-                                Lorem Ipsum es simplemente el texto de relleno
-                                de las imprentas y archivos de texto. Lorem
-                                Ipsum ha sido el texto de relleno estándar de
-                                las industrias desde el año 1500, cuando un
-                                impresor (N. del T. persona que se dedica a la
-                                imprenta) desconocido usó una galería de textos
-                                y los mezcló de tal manera que logró hacer un
-                                libro de textos especimen.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-4 col-span-2">
-                            <img
-                                src="/images/img-project-2.jpeg"
-                                alt="project"
-                                class="object-contain"
-                            />
-                            <div class="flex gap-3 justify-center">
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-sky-400 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                            </div>
-                            <span class="text-center text-2xl"
-                                >Control de ventas</span
-                            >
-                        </div>
-                    </div>
-                </li>
-                <li class="h-screen">
-                    <div class="w-[70vw] grid grid-cols-3 gap-6">
-                        <div class="flex flex-col gap-5">
-                            <div class="flex items-center gap-4">
-                                <span
-                                    class="w-2 h-2 bg-sky-400 rounded-full"
-                                ></span>
-                                <p class="text-xl font-bold text-sky-400">01</p>
-                            </div>
-                            <h3 class="text-3xl text-sky-400 font-bold">
-                                Prysoft - Punto De Venta
-                            </h3>
-                            <p class="text-xl">
-                                Aplicación de gestión de ventas para pequeños
-                                comerciantes
-                            </p>
-                            <p class="text-gray-400 leading-loose">
-                                Lorem Ipsum es simplemente el texto de relleno
-                                de las imprentas y archivos de texto. Lorem
-                                Ipsum ha sido el texto de relleno estándar de
-                                las industrias desde el año 1500, cuando un
-                                impresor (N. del T. persona que se dedica a la
-                                imprenta) desconocido usó una galería de textos
-                                y los mezcló de tal manera que logró hacer un
-                                libro de textos especimen.
-                            </p>
-                        </div>
-                        <div class="flex flex-col gap-4 col-span-2">
-                            <img
-                                src="/images/img-project-3.jpeg"
-                                alt="project"
-                                class="object-contain"
-                            />
-                            <div class="flex gap-3 justify-center">
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-sky-400 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                                <span
-                                    class="w-3 h-3 rounded-full border-2 bg-gray-500 border-white"
-                                ></span>
-                            </div>
-                            <span class="text-center text-2xl"
-                                >Control de ventas</span
-                            >
-                        </div>
-                    </div>
-                </li> -->
       </ul>
     </section>
 
@@ -213,9 +154,11 @@
     <!-- * ---------------- -->
     <section #aboutMe class="flex flex-col items-center mt-40">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Sobre mí</h2>
-      <div class="flex w-[60vw] gap-10 mt-20">
-        <div class="flex flex-col gap-4">
-          <h3 class="text-4xl text-sky-600 dark:text-sky-400">
+      <div
+        class="flex flex-col lg:flex-row justify-center w-11/12 xl:w-[60vw] items-center gap-10 mt-20">
+        <div
+          class="flex flex-col gap-4 text-center md:text-left max-w-screen-lg">
+          <h3 class="text-3xl md:text-4xl text-sky-600 dark:text-sky-400">
             Hola, me llamo Hugo 👋
           </h3>
           <div
@@ -250,7 +193,7 @@
         <img
           src="/images/portrait-img.webp"
           alt="portrait"
-          class="w-80 object-contain" />
+          class="w-60 md:w-80 object-contain" />
       </div>
     </section>
 
@@ -260,13 +203,13 @@
     <section class="flex flex-col items-center mt-40 gap-4">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Habilidades</h2>
       <div
-        class="flex w-[62vw] flex-wrap justify-center gap-x-32 gap-y-12 items-center mt-10">
+        class="flex max-w-screen-xl flex-wrap justify-center gap-x-10 md:gap-x-32 gap-y-12 items-center mt-20">
         @for (skill of skillItems; track skill.id) {
           <app-skill-item [skill]="skill"></app-skill-item>
         }
       </div>
       <div
-        class="grid grid-cols-2 gap-x-10 gap-y-6 mt-10 text-gray-600 dark:text-gray-400">
+        class="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 mt-10 text-gray-600 dark:text-gray-400">
         <div class="flex items-center py-4 px-8 gap-3">
           <i class="fa-solid fa-users text-3xl"></i>
           <span class="text-lg font-mono">Trabajo en equipo</span>
@@ -292,13 +235,16 @@
     <!-- * ---------------  -->
     <!-- * --- Contáctame--  -->
     <!-- * ---------------- -->
-    <section #contactMe class="flex flex-col items-center mt-40 gap-20">
+    <section
+      #contactMe
+      class="flex flex-col w-11/12 items-center mt-40 gap-20 mx-auto">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Contáctame</h2>
-      <p class="text-xl text-gray-600 dark:text-gray-400">
+      <p
+        class="text-xl text-gray-600 dark:text-gray-400 text-center leading-relaxed">
         Si te interesa mi trabajo y te gustaría ponerte en contacto conmigo
         podés hacerlo por los siguientes medios:
       </p>
-      <div class="flex justify-evenly w-full">
+      <div class="grid grid-cols-2 gap-4 md:flex md:justify-evenly w-full">
         @for (contact of contactItems; track contact.text) {
           <a
             [href]="contact.link"

@@ -248,18 +248,21 @@ export class AppComponent implements OnInit {
     const burgerButtonHTML = this.burgerButton()?.nativeElement;
 
     if (this.isDisplayed) {
-      this.renderer2.setStyle(mobileMenuHTML, 'top', '-100');
+      this.renderer2.setStyle(mobileMenuHTML, 'top', '-100%');
       this.renderer2.removeClass(burgerButtonHTML, 'header-icon');
     } else {
-      this.renderer2.setStyle(mobileMenuHTML, 'top', '4rem');
+      this.renderer2.setStyle(mobileMenuHTML, 'top', '0');
       this.renderer2.addClass(burgerButtonHTML, 'header-icon');
     }
 
     this.isDisplayed = !this.isDisplayed;
   }
 
-  scroll(el: HTMLElement) {
+  scroll(el: HTMLElement, fromMobileMenu = false) {
     el.scrollIntoView({ behavior: 'smooth' });
+    if (fromMobileMenu) {
+      this.toggleMenu();
+    }
   }
 
   toggleDarkMode() {

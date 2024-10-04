@@ -41,47 +41,63 @@
       </button>
     </div>
 
-    <div class="fixed flex lg:hidden z-10">
+    <div class="fixed flex lg:hidden z-30">
       <button
         (click)="toggleMenu()"
-        class="flex flex-col lg:hidden justify-center w-10 ml-auto bg-transparent gap-2.5"
+        class="fixed right-6 top-6 flex flex-col lg:hidden justify-center w-10 ml-auto bg-transparent gap-2.5 z-10"
         #burgerButton>
         <div
-          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+          class="bg-sky-600 dark:bg-sky-400 w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
         <div
-          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+          class="bg-sky-600 dark:bg-sky-400 w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
         <div
-          class="bg-white w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
+          class="bg-sky-600 dark:bg-sky-400 w-full h-1 rounded-full transition-all duration-200 origin-left"></div>
       </button>
 
-      <ul
-        class="flex flex-col fixed w-full h-full bg-gray-600 -top-full transition-all duration-500"
-        #mobileMenu>
-        <li>
-          <button (click)="scroll(home)" class="nav-button">
-            <i class="fa-solid fa-home"></i>
-            <span>Inicio</span>
-          </button>
-        </li>
-        <li>
-          <button (click)="scroll(projects)" class="nav-button">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Proyectos</span>
-          </button>
-        </li>
-        <li>
-          <button (click)="scroll(aboutMe)" class="nav-button">
-            <i class="fa-solid fa-user"></i>
-            <span>Sobre mí</span>
-          </button>
-        </li>
-        <li>
-          <button (click)="scroll(contactMe)" class="nav-button">
-            <i class="fa-solid fa-envelope"></i>
-            <span>Contáctame</span>
-          </button>
-        </li>
-      </ul>
+      <div
+        #mobileMenu
+        class="fixed flex justify-center items-center -top-full w-full h-full bg-gray-100 dark:bg-gray-950 transition-all duration-500">
+        <ul
+          class="flex flex-col items-center justify-center gap-10 text-sky-600 dark:text-sky-400">
+          <li>
+            <button (click)="scroll(home, true)" class="flex gap-2 text-3xl">
+              <i class="fa-solid fa-home"></i>
+              <span>Inicio</span>
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="scroll(projects, true)"
+              class="flex gap-2 text-3xl">
+              <i class="fa-solid fa-briefcase"></i>
+              <span>Proyectos</span>
+            </button>
+          </li>
+          <li>
+            <button (click)="scroll(aboutMe, true)" class="flex gap-2 text-3xl">
+              <i class="fa-solid fa-user"></i>
+              <span>Sobre mí</span>
+            </button>
+          </li>
+          <li>
+            <button
+              (click)="scroll(contactMe, true)"
+              class="flex gap-2 text-3xl">
+              <i class="fa-solid fa-envelope"></i>
+              <span>Contáctame</span>
+            </button>
+          </li>
+        </ul>
+        <button
+          class="flex absolute bottom-10 right-10 w-9 h-9 justify-center items-center text-5xl text-sky-600 dark:text-sky-400 cursos-pointer rounded-md transition-all duration-100"
+          (click)="toggleDarkMode()">
+          @if (isDarkMode) {
+            <i class="fa-solid fa-moon"></i>
+          } @else {
+            <i class="fa-solid fa-sun"></i>
+          }
+        </button>
+      </div>
     </div>
   </header>
 

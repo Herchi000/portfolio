@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   inject,
+  OnDestroy,
   OnInit,
   Renderer2,
   Signal,
@@ -15,21 +16,32 @@ import { Project } from './interfaces/project.interface';
 import { Contact } from './interfaces/contact.interface';
 import { SkillItemComponent } from './components/skill-item/skill-item.component';
 import { Skill } from './interfaces/skill.interface';
+import { HeaderComponent } from './layout/header/header.component';
+import { ScrollService } from './services/scroll.service';
+import { Subscription } from 'rxjs';
+import { PageSection } from './interfaces/scroll.interface';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, ProjectComponent, SkillItemComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule,
+    ProjectComponent,
+    SkillItemComponent,
+    HeaderComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnDestroy {
   title = 'portfolio';
   fullYear = new Date().getFullYear();
-  isDarkMode = false;
-  mobileMenu: Signal<ElementRef | undefined> = viewChild('mobileMenu');
-  burgerButton: Signal<ElementRef | undefined> = viewChild('burgerButton');
-  isDisplayed = false;
+  private subscription: Subscription;
+  homeSection: Signal<ElementRef | undefined> = viewChild('home');
+  projectsSection: Signal<ElementRef | undefined> = viewChild('projects');
+  aboutMeSection: Signal<ElementRef | undefined> = viewChild('aboutMe');
+  contactMeSection: Signal<ElementRef | undefined> = viewChild('contactMe');
 
   projectCards: Project[] = [
     {
@@ -216,57 +228,42 @@ export class AppComponent implements OnInit {
     },
   ];
 
-  private themeService = inject(ThemeService);
+  private scrollService = inject(ScrollService);
 
-  constructor(
-    private router: Router,
-    private renderer2: Renderer2
-  ) {}
-
-  ngOnInit() {
-    this.themeService.loadTheme();
-    this.isDarkMode = localStorage.getItem('theme') === 'dark';
-
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', event => {
-        const systemPrefersDark = event.matches;
-        this.themeService.toggleTheme(systemPrefersDark);
-        this.isDarkMode = systemPrefersDark;
-      });
-
-    this.router.events.subscribe(event => {
-      if (!(event instanceof NavigationEnd)) {
-        return;
-      }
-      window.scrollTo(0, 0);
+  constructor() {
+    this.subscription = this.scrollService.pageSection.subscribe(section => {
+      this.scroll(section);
     });
   }
 
-  toggleMenu() {
-    const mobileMenuHTML = this.mobileMenu()?.nativeElement;
-    const burgerButtonHTML = this.burgerButton()?.nativeElement;
-
-    if (this.isDisplayed) {
-      this.renderer2.setStyle(mobileMenuHTML, 'top', '-100%');
-      this.renderer2.removeClass(burgerButtonHTML, 'header-icon');
-    } else {
-      this.renderer2.setStyle(mobileMenuHTML, 'top', '0');
-      this.renderer2.addClass(burgerButtonHTML, 'header-icon');
-    }
-
-    this.isDisplayed = !this.isDisplayed;
-  }
-
-  scroll(el: HTMLElement, fromMobileMenu = false) {
-    el.scrollIntoView({ behavior: 'smooth' });
-    if (fromMobileMenu) {
-      this.toggleMenu();
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
     }
   }
 
-  toggleDarkMode() {
-    this.isDarkMode = !this.isDarkMode;
-    this.themeService.toggleTheme(this.isDarkMode);
+  private scroll(el: PageSection) {
+    switch (el) {
+      case 'home':
+        this.homeSection()?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+      case 'projects':
+        this.projectsSection()?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+      case 'aboutMe':
+        this.aboutMeSection()?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+      case 'contactMe':
+        this.contactMeSection()?.nativeElement.scrollIntoView({
+          behavior: 'smooth',
+        });
+        break;
+    }
   }
 }

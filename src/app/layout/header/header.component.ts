@@ -7,7 +7,6 @@ import {
   viewChild,
 } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
-import { NavigationEnd, Router } from '@angular/router';
 import { ScrollService } from '../../services/scroll.service';
 import { PageSection } from '../../interfaces/scroll.interface';
 
@@ -26,7 +25,6 @@ export class HeaderComponent {
 
   private renderer2: Renderer2 = inject(Renderer2);
   private themeService: ThemeService = inject(ThemeService);
-  private router: Router = inject(Router);
   private scrollService: ScrollService = inject(ScrollService);
 
   ngOnInit(): void {
@@ -40,13 +38,6 @@ export class HeaderComponent {
         this.themeService.toggleTheme(systemPrefersDark);
         this.isDarkMode = systemPrefersDark;
       });
-
-    // this.router.events.subscribe(event => {
-    //   if (!(event instanceof NavigationEnd)) {
-    //     return;
-    //   }
-    //   window.scrollTo(0, 0);
-    // });
   }
 
   toggleMobileMenu() {

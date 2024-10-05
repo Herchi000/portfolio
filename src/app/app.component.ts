@@ -4,13 +4,9 @@ import {
   ElementRef,
   inject,
   OnDestroy,
-  OnInit,
-  Renderer2,
   Signal,
   viewChild,
 } from '@angular/core';
-import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { ThemeService } from './services/theme.service';
 import { ProjectComponent } from './components/project/project.component';
 import { Project } from './interfaces/project.interface';
 import { Contact } from './interfaces/contact.interface';
@@ -26,7 +22,6 @@ import { FooterComponent } from './layout/footer/footer.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     CommonModule,
     ProjectComponent,
     SkillItemComponent,

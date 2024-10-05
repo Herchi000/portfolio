@@ -24,7 +24,7 @@ export class ThemeService {
     if (savedTheme) {
       this.applyTheme(savedTheme === 'dark');
     } else {
-      // Detectar si el sistema tiene modo oscuro activado
+      // Detecting if the system has dark mode activated
       const prefersDarkScheme = window.matchMedia(
         '(prefers-color-scheme: dark)'
       ).matches;

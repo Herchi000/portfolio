@@ -20,6 +20,7 @@ import { HeaderComponent } from './layout/header/header.component';
 import { ScrollService } from './services/scroll.service';
 import { Subscription } from 'rxjs';
 import { PageSection } from './interfaces/scroll.interface';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @Component({
   selector: 'app-root',
@@ -30,13 +31,13 @@ import { PageSection } from './interfaces/scroll.interface';
     ProjectComponent,
     SkillItemComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnDestroy {
   title = 'portfolio';
-  fullYear = new Date().getFullYear();
   private subscription: Subscription;
   homeSection: Signal<ElementRef | undefined> = viewChild('home');
   projectsSection: Signal<ElementRef | undefined> = viewChild('projects');

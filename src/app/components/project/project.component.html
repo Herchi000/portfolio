@@ -12,7 +12,10 @@
     }">
     <div
       class="overflow-hidden"
-      [ngClass]="{ 'w-[19rem]': project().isMobile }">
+      [ngClass]="{
+        'w-[19rem]': project().isMobile,
+        'xl:w-[44rem]': !project().isMobile,
+      }">
       <div #imageSliderRef class="flex relative">
         @for (image of project().images; track image.url) {
           <img

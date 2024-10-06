@@ -81,14 +81,14 @@
     <section #aboutMe class="flex flex-col items-center">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Sobre mí</h2>
       <div
-        class="flex flex-col lg:flex-row justify-center w-11/12 xl:w-[60vw] items-center gap-10 mt-20">
+        class="flex flex-col lg:flex-row justify-center items-center gap-10 mt-20">
         <div
-          class="flex flex-col gap-4 text-center md:text-left max-w-screen-lg">
+          class="flex flex-col gap-4 text-center md:text-left max-w-screen-lg px-3">
           <h3 class="text-3xl md:text-4xl text-sky-600 dark:text-sky-400">
             Hola, me llamo Hugo 👋
           </h3>
           <div
-            class="flex flex-col text-gray-600 dark:text-gray-400 text-lg leading-loose gap-6">
+            class="flex flex-col text-gray-600 dark:text-gray-400 text-base lg:text-lg leading-loose gap-6">
             <p>
               Soy un desarrollador
               <span class="text-sky-600 dark:text-sky-400 font-semibold"
@@ -108,18 +108,13 @@
               aportar ideas innovadoras y mejorar continuamente los proyectos en
               los que participo.
             </p>
-            <!-- <p>
-              Entre algunas de las tecnologías que manejo se encuentran:
-              Angular, React, Node JS, Express, MongoDB, MySQL, Git, entre
-              otras.
-            </p> -->
           </div>
         </div>
 
         <img
           src="/images/portrait-img.webp"
           alt="portrait"
-          class="w-60 md:w-80 object-contain" />
+          class="w-40 md:w-60 object-contain" />
       </div>
     </section>
 
@@ -127,10 +122,19 @@
     <!-- * --- Proyectos--  -->
     <!-- * ---------------- -->
     <section #projects class="flex flex-col items-center mt-40">
-      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Proyectos</h2>
-      <ul class="flex flex-col items-center mt-40 gap-80">
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Experiencia</h2>
+      <!-- <div class="flex">
+        <img src="/icons/prysoft-logo-white.svg" alt="prysoft-logo" />
+        <p
+          class="text-xl text-gray-600 dark:text-gray-400 text-center leading-relaxed mt-10">
+          Durante 2 años trabajé en Prysoft, una empresa de desarrollo de
+          software como servicio
+        </p>
+      </div> -->
+
+      <ul class="flex flex-col items-center mt-40 gap-40">
         @for (project of projectCards; track project.id; let even = $even) {
-          <li class="">
+          <li>
             <app-project [project]="project" [imageLeft]="!even"></app-project>
           </li>
         }

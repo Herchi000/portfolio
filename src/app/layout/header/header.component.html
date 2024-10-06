@@ -9,15 +9,15 @@
         </button>
       </li>
       <li>
-        <button (click)="scroll('projects')" class="nav-button">
-          <i class="fa-solid fa-briefcase"></i>
-          <span>Proyectos</span>
-        </button>
-      </li>
-      <li>
         <button (click)="scroll('aboutMe')" class="nav-button">
           <i class="fa-solid fa-user"></i>
           <span>Sobre mí</span>
+        </button>
+      </li>
+      <li>
+        <button (click)="scroll('projects')" class="nav-button">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Proyectos</span>
         </button>
       </li>
       <li>
@@ -67,18 +67,18 @@
         </li>
         <li>
           <button
-            (click)="scroll('projects', true)"
-            class="flex gap-2 text-3xl items-center">
-            <i class="fa-solid fa-briefcase"></i>
-            <span>Proyectos</span>
-          </button>
-        </li>
-        <li>
-          <button
             (click)="scroll('aboutMe', true)"
             class="flex gap-2 text-3xl items-center">
             <i class="fa-solid fa-user"></i>
             <span>Sobre mí</span>
+          </button>
+        </li>
+        <li>
+          <button
+            (click)="scroll('projects', true)"
+            class="flex gap-2 text-3xl items-center">
+            <i class="fa-solid fa-briefcase"></i>
+            <span>Proyectos</span>
           </button>
         </li>
         <li>

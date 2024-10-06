@@ -35,14 +35,14 @@
           class="flex flex-col items-center md:items-stretch gap-4 w-min text-sky-600 dark:text-sky-400">
           <div class="flex h-fit w-60 md:w-[29rem]">
             <h1
-              class="text-nowrap overflow-hidden text-3xl md:text-6xl leading-snug write-animation pr-2">
+              class="text-nowrap overflow-hidden text-3xl md:text-6xl md:h-16 leading-snug write-animation pr-2">
               Hugo Fernández
             </h1>
             <span
               class="w-1 bg-sky-600 dark:bg-sky-400 cursor-animation"></span>
           </div>
           <span
-            class="text-base md:text-xl text-gray-600 dark:text-gray-300 text-balance"
+            class="text-base md:text-xl text-gray-600 dark:text-gray-400 text-balance"
             >Programador Frontend con 2 años de experiencia profesional en el
             desarrollo de software.</span
           >
@@ -76,23 +76,9 @@
     </div>
 
     <!-- * ---------------  -->
-    <!-- * --- Proyectos--  -->
-    <!-- * ---------------- -->
-    <section #projects class="flex flex-col items-center">
-      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Proyectos</h2>
-      <ul class="flex flex-col items-center mt-40 gap-80">
-        @for (project of projectCards; track project.id; let even = $even) {
-          <li class="">
-            <app-project [project]="project" [imageLeft]="!even"></app-project>
-          </li>
-        }
-      </ul>
-    </section>
-
-    <!-- * ---------------  -->
     <!-- * --- Sobre mi--  -->
     <!-- * ---------------- -->
-    <section #aboutMe class="flex flex-col items-center mt-40">
+    <section #aboutMe class="flex flex-col items-center">
       <h2 class="text-4xl text-gray-700 dark:text-gray-100">Sobre mí</h2>
       <div
         class="flex flex-col lg:flex-row justify-center w-11/12 xl:w-[60vw] items-center gap-10 mt-20">
@@ -122,11 +108,11 @@
               aportar ideas innovadoras y mejorar continuamente los proyectos en
               los que participo.
             </p>
-            <p>
+            <!-- <p>
               Entre algunas de las tecnologías que manejo se encuentran:
               Angular, React, Node JS, Express, MongoDB, MySQL, Git, entre
               otras.
-            </p>
+            </p> -->
           </div>
         </div>
 
@@ -135,6 +121,20 @@
           alt="portrait"
           class="w-60 md:w-80 object-contain" />
       </div>
+    </section>
+
+    <!-- * ---------------  -->
+    <!-- * --- Proyectos--  -->
+    <!-- * ---------------- -->
+    <section #projects class="flex flex-col items-center mt-40">
+      <h2 class="text-4xl text-gray-700 dark:text-gray-100">Proyectos</h2>
+      <ul class="flex flex-col items-center mt-40 gap-80">
+        @for (project of projectCards; track project.id; let even = $even) {
+          <li class="">
+            <app-project [project]="project" [imageLeft]="!even"></app-project>
+          </li>
+        }
+      </ul>
     </section>
 
     <!-- * -----------------  -->
